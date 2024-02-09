@@ -8,7 +8,11 @@
 }
 
 body {
-    background-color: blueviolet;
+    background: url(vaisseau.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
 }
 
 .login-section{
@@ -21,7 +25,8 @@ body {
     transform: translate(-50%, -50%);
     backdrop-filter: blur(10px);
     border-radius: 10px;
-    transition: .5s;
+    transition: .4s;
+    overflow: hidden;
 }
 
 .login-section:hover{
@@ -81,8 +86,9 @@ body {
 
 .input-box input:focus ~ label,
 .input-box input:valid ~ label {
-    transform: translateY(-20px);
     top: -5px;
+    color: #ff0000;
+    font-weight: 600;
 }
 
 .remember-password {
@@ -102,6 +108,12 @@ body {
 .remember-password a {
     color: #fff;
     font-weight: 600;
+    text-decoration: none;
+}
+
+.remember-password a:hover {
+    color: #ff0000;
+    text-decoration: none;
 }
 
 .btn {
@@ -132,4 +144,24 @@ body {
 .create-account p a:hover {
     color: #ff0000;
     font-weight: 600;
+}
+
+.login-section .formbox.register {
+    transform: translateY(-460px);
+    transition: transform 5s ease;
+}
+
+.login-section.active .formbox.register {
+    transform: translateY(0);
+    transition-delay: .7s;
+}
+
+.login-section .formbox.login {
+    transform: translateY(0px);
+    transition: transform 7s;
+}
+
+.login-section.active .formbox.login {
+    transform: translateY(430px);
+    transition-delay: .0s;
 }
